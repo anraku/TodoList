@@ -1,0 +1,11 @@
+version: '2'
+services:
+  mysql:
+    build: ./mysql/
+    volumes:
+      - ./mysql/mysql_data:/var/lib/mysql # データの永続化
+      - ./mysql/sqls:/docker-entrypoint-initdb.d # 初期データ投入
+    environment:
+      - MYSQL_ROOT_PASSWORD=password #rootパスワードの設定
+    ports:
+      - 3306:3306
