@@ -4,9 +4,9 @@
     <ul class="list-group">
       <h2>残っているタスク</h2>
       <hr>
-      <li v-for="todo in todos" :key="todo.id" class="list-group-item">
+      <li v-for="todo in todos" size="medium" :key="todo.id" class="list-group-item">
         <span v-if="!todo.done">
-          <el-checkbox v-on:change="updateTask(todo)">{{ todo.text }}</el-checkbox>
+          <el-checkbox border v-on:change="updateTask(todo)">{{ todo.text }}</el-checkbox>
         </span>
       </li>
     </ul>
@@ -15,7 +15,7 @@
       <hr>
       <li v-for="todo in todos" :key="todo.id" class="list-group-item">
         <span v-if="todo.done">
-          <el-checkbox v-on:change="updateTask(todo)"><s>{{ todo.text }}</s></el-checkbox>
+          <el-checkbox border v-on:change="updateTask(todo)"><s>{{ todo.text }}</s></el-checkbox>
         </span>
       </li>
     </ul>

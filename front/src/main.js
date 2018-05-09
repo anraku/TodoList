@@ -4,8 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(ElementUI)
+Vue.use(Vuetify)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
