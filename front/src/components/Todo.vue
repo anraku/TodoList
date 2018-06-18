@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-input placeholder="タスクを追加" v-model="newTask" v-on:change="addTask()"></el-input>
+    <el-input class="input" placeholder="タスクを追加" v-model="newTask" v-on:change="addTask()"></el-input>
     <ul class="list-group">
       <h2>残っているタスク</h2>
       <hr>
@@ -75,6 +75,11 @@ export default {
 </script>
 
 <style>
+.input {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
 .list-group {
 text-align: left;
 width: 50%;
