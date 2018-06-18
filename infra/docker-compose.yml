@@ -1,7 +1,17 @@
 version: '2'
 services:
+  api:
+    container_name: 'api'
+    build:
+      context: ../backend/service/
+      dockerfile: Dockerfile
+    ports:
+      - 1323:1323
   mysql:
-    build: ./mysql/
+    container_name: 'db'
+    build: 
+      context: ./mysql/
+      dockerfile: Dockerfile
     volumes:
       - ./mysql/mysql_data:/var/lib/mysql # データの永続化
       - ./mysql/sqls:/docker-entrypoint-initdb.d # 初期データ投入

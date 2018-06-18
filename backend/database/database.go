@@ -10,7 +10,7 @@ type Model struct {
 }
 
 func Connect() (*gorm.DB, error) {
-	db, err := gorm.Open("mysql", "root:password@/app?charset=utf8&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "root:password@tcp(mysql:3306)/app?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		return nil, err
 	}
