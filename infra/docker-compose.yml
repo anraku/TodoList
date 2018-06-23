@@ -2,7 +2,6 @@ version: '2'
 services:
   web:
     container_name: 'web'
-    tty: true
     build:
       context: ../front/
       dockerfile: Dockerfile
@@ -11,7 +10,7 @@ services:
     networks:
       - front
     ports:
-      - "8080:8080"
+      - 8080:8080
 
   api:
     container_name: 'api'
