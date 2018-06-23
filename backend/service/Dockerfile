@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.6
+FROM alpine:3.7
 WORKDIR /app
 
 COPY api /app

@@ -1,12 +1,29 @@
 version: '2'
 services:
+  web:
+    container_name: 'web'
+    tty: true
+    build:
+      context: ../front/
+      dockerfile: Dockerfile
+    volumes:
+      - ../front:/app
+    networks:
+      - front
+    ports:
+      - "8080:8080"
+
   api:
     container_name: 'api'
     build:
       context: ../backend/service/
       dockerfile: Dockerfile
+    networks:
+      - front
+      - datastore
     ports:
       - 1323:1323
+
   mysql:
     container_name: 'db'
     build: 
@@ -17,5 +34,11 @@ services:
       - ./mysql/sqls:/docker-entrypoint-initdb.d # 初期データ投入
     environment:
       - MYSQL_ROOT_PASSWORD=password #rootパスワードの設定
+    networks:
+      - datastore
     ports:
       - 3306:3306
+
+networks:
+    front:
+    datastore:
