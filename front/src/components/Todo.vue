@@ -29,7 +29,6 @@ export default {
   name: 'Todo',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
       newTask: '',
       todos: []
     }
