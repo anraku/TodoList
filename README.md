@@ -44,4 +44,5 @@ Dai Omori (a.k.a anraku)
 
 # References
 https://mattn.kaoriya.net/software/lang/go/20180330093346.htm
+
 https://github.com/mattn/go-vue-example
